@@ -1,5 +1,5 @@
 import click
-from mine_dwarf.core import read_file
+import mine_dwarf.core as core
 from mine_dwarf.title import generate_random_title
 
 @click.group()
@@ -8,6 +8,13 @@ def cli(ctx):
 	ctx.obj={}
 	subcommand = ctx.invoked_subcommand
 	print(generate_random_title())
+
+@cli.command('test-me')
+@click.option('--file', help="File to open", default="")
+@click.option('--wrap-size', help="Text wrapping size", default=40)
+def test_me(file, wrap_size):
+    """This is an example script to learn Click."""
+    core.test_me(file, wrap_size)
 
 
 @cli.command('print-file')

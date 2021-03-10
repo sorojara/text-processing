@@ -5,3 +5,16 @@ def open_file(file):
 		return data
 	except:
 		raise Exception
+
+def open_file_lines(file):
+	try:
+		with open(file, 'r') as f:
+			data = f.readlines()
+		return data
+	except:
+		raise Exception
+
+def sort_file_lines(file):
+	ret = open_file_lines(file)
+	ret.sort()
+	return ret
