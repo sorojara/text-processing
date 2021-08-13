@@ -5,7 +5,7 @@ with open('requirements.txt') as f:
 setup(
     name="mine_dwarf",
     version='0.1',
-    py_modules=['mine_dwarf', 'core', 'file'],
+    py_modules=['mine_dwarf', 'core', 'file', 'calc', 'nlp', 'shape', 'title'],
     install_requires=required,
     entry_points= {'console_scripts':
     ['minedwarf=mine_dwarf.mine_dwarf:run_main',]
