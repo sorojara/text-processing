@@ -14,7 +14,6 @@ def test_me(file, size):
 	print('\nWords Counted with split: {}'.format(dwarfcalc.count_tokens(words)))
 	print('\nWords Counted with nlp: {}'.format(dwarfcalc.count_tokens(words_nlp)))
 
- 
 def read_file(file):
 	print('Printing "{}"...'.format(file))
 	print(dwarfile.open_file(file))
@@ -32,3 +31,13 @@ def wrap_file(file, size):
 	print('\nWrapped text:')
 	wrapped_text = dwarfshape.wrap_text(original_text, size)
 	print(wrapped_text)
+
+def word_count(file, size):
+	print('Count words in "{}"'.format(file))
+	print('\nOriginal text:')
+	original_text = dwarfile.open_file(file)
+	print(original_text)
+	words = dwarfshape.tokenize(original_text,' ')
+	words_nlp = dwarfnlp.word_tokenize(original_text)
+	print('\nWords Counted with split: {}'.format(dwarfcalc.count_tokens(words)))
+	print('\nWords Counted with nlp: {}'.format(dwarfcalc.count_tokens(words_nlp)))

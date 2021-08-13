@@ -14,7 +14,7 @@ def open_file_lines(file):
 	except:
 		raise Exception
 
-def sort_file_lines(file):
+def open_sorted_file_lines(file):
 	ret = open_file_lines(file)
 	ret.sort()
 	return ret
